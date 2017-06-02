@@ -1,0 +1,56 @@
+    1  apt-get update && apt-get upgrade
+    2  apt-cache search kernel-header
+    3  apt-cache search linux-headers
+    4  apt-get install linux-header
+    5  apt-get install linux-headers
+    6  apt-get install linux-headers-$(uname -r)
+    7  apt-cache search build
+    8  apt-cache search build | more
+    9  apt-get install build-essential
+   10  apt-get install lvm mdadm tree less git mc
+   11  apt-get install lvm2 mdadm tree less git mc
+   12  cd /media/alumno/VBOXADDITIONS_5.1.8_111374/
+   13  ls -l
+   14  ./VBoxLinuxAdditions.run 
+   15  apt-get clean
+   16  reboot
+   17  fdisk -l
+   18  fdisk /dev/sdb
+   19  fdisk -l
+   20  ls -l /dev/sd*
+   21  fdisk /dev /sdc
+   22  fdisk -l
+   23  fdisk /dev/sdc
+   24  ls -l/dev/sdc*
+   25  fdisk /dev/sdc/t
+   26  fdisk /dev/sdc/
+   27  t
+   28  fdisk /dev/sdc/
+   29  fdisk /dev/sdc
+   30  pvs
+   31  pv s
+   32  pv create
+   33  pvcreate
+   34  pvcreate /dev/sdb1
+   35  pvs
+   36  pvcreate /dev/sdb2
+   37  pvcreate /dev/sdc1
+   38  pvcreate /dev/sdc2
+   39  pvs
+   40  pvscan
+   41  pvdisplay
+   42  vgs
+   43  vgcreate
+   44  vgcreate vguno /dev/sdb1
+   45  vgs
+   46  vgcreate vgdos /dev/sdb2
+   47  vgcreate vgtres /dev/sdc1
+   48  vgs
+   49  fdisk -l /dev/sd*
+   50  fdisk /dev/sdb
+   51  fdisk -l /dev/sd*
+   52  fdisk /dev/sdc
+   53  fdisk -l /dev/sd*
+   54  fdisk /dev/sdb
+   55  fdisk -l /dev/sd*
+   56  history >> comandosdiscorigidoparte1

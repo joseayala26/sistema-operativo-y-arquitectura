@@ -1,0 +1,922 @@
+alumno@alumno-VirtualBox:~/Escritorio$ sudo -su
+sudo: la opción requiere un argumento -- 'u'
+usage: sudo -h | -K | -k | -V
+usage: sudo -v [-AknS] [-g group] [-h host] [-p prompt] [-u user]
+usage: sudo -l [-AknS] [-g group] [-h host] [-p prompt] [-U user] [-u user]
+            [command]
+usage: sudo [-AbEHknPS] [-r role] [-t type] [-C num] [-g group] [-h host] [-p
+            prompt] [-u user] [VAR=value] [-i|-s] [<command>]
+usage: sudo -e [-AknS] [-r role] [-t type] [-C num] [-g group] [-h host] [-p
+            prompt] [-u user] file ...
+alumno@alumno-VirtualBox:~/Escritorio$ sudo su
+[sudo] password for alumno: 
+root@alumno-VirtualBox:/home/alumno/Escritorio# fdisk -l
+Disk /dev/sda: 8 GiB, 8589934592 bytes, 16777216 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0x17201772
+
+Disposit.  Inicio    Start    Final Sectores  Size Id Tipo
+/dev/sda1  *          2048 15728639 15726592  7,5G 83 Linux
+/dev/sda2         15730686 16775167  1044482  510M  5 Extendida
+/dev/sda5         15730688 16775167  1044480  510M 82 Linux swap / Solaris
+
+
+Disk /dev/sdb: 5 GiB, 5368709120 bytes, 10485760 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/sdc: 5 GiB, 5368709120 bytes, 10485760 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+root@alumno-VirtualBox:/home/alumno/Escritorio# fdisk /dev/sdb
+
+Welcome to fdisk (util-linux 2.28.2).
+Changes will remain in memory only, until you decide to write them.
+Be careful before using the write command.
+
+El dispositivo no contiene una tabla de particiones reconocible.
+Created a new DOS disklabel with disk identifier 0xd427a686.
+
+Orden (m para obtener ayuda): m
+
+Help:
+
+  DOS (MBR)
+   a   toggle a bootable flag
+   b   edit nested BSD disklabel
+   c   toggle the dos compatibility flag
+
+  Generic
+   d   delete a partition
+   F   list free unpartitioned space
+   l   list known partition types
+   n   add a new partition
+   p   print the partition table
+   t   change a partition type
+   v   verify the partition table
+   i   print information about a partition
+
+  Misc
+   m   print this menu
+   u   change display/entry units
+   x   extra functionality (experts only)
+
+  Script
+   I   load disk layout from sfdisk script file
+   O   dump disk layout to sfdisk script file
+
+  Save & Exit
+   w   write table to disk and exit
+   q   quit without saving changes
+
+  Create a new label
+   g   create a new empty GPT partition table
+   G   create a new empty SGI (IRIX) partition table
+   o   create a new empty DOS partition table
+   s   create a new empty Sun partition table
+
+
+Orden (m para obtener ayuda): p
+Disk /dev/sdb: 5 GiB, 5368709120 bytes, 10485760 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0xd427a686
+
+Orden (m para obtener ayuda): n
+Partition type
+   p   primary (0 primary, 0 extended, 4 free)
+   e   extended (container for logical partitions)
+Select (default p): 
+
+Using default response p.
+Número de partición (1-4, default 1): 
+First sector (2048-10485759, default 2048): 
+Last sector, +sectors or +size{K,M,G,T,P} (2048-10485759, default 10485759): +3G
+
+Created a new partition 1 of type 'Linux' and of size 3 GiB.
+
+Orden (m para obtener ayuda): p
+Disk /dev/sdb: 5 GiB, 5368709120 bytes, 10485760 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0xd427a686
+
+Disposit.  Inicio Start   Final Sectores Size Id Tipo
+/dev/sdb1          2048 6293503  6291456   3G 83 Linux
+
+Orden (m para obtener ayuda): n
+Partition type
+   p   primary (1 primary, 0 extended, 3 free)
+   e   extended (container for logical partitions)
+Select (default p): 
+
+Using default response p.
+Número de partición (2-4, default 2): 
+First sector (6293504-10485759, default 6293504): 
+Last sector, +sectors or +size{K,M,G,T,P} (6293504-10485759, default 10485759): 
+
+Created a new partition 2 of type 'Linux' and of size 2 GiB.
+
+Orden (m para obtener ayuda): w
+The partition table has been altered.
+Calling ioctl() to re-read partition table.
+Syncing disks.
+
+root@alumno-VirtualBox:/home/alumno/Escritorio# fdisk -l
+Disk /dev/sda: 8 GiB, 8589934592 bytes, 16777216 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0x17201772
+
+Disposit.  Inicio    Start    Final Sectores  Size Id Tipo
+/dev/sda1  *          2048 15728639 15726592  7,5G 83 Linux
+/dev/sda2         15730686 16775167  1044482  510M  5 Extendida
+/dev/sda5         15730688 16775167  1044480  510M 82 Linux swap / Solaris
+
+
+Disk /dev/sdb: 5 GiB, 5368709120 bytes, 10485760 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0xd427a686
+
+Disposit.  Inicio   Start    Final Sectores Size Id Tipo
+/dev/sdb1            2048  6293503  6291456   3G 83 Linux
+/dev/sdb2         6293504 10485759  4192256   2G 83 Linux
+
+
+Disk /dev/sdc: 5 GiB, 5368709120 bytes, 10485760 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+root@alumno-VirtualBox:/home/alumno/Escritorio# ls -l /dev/sd*
+brw-rw---- 1 root disk 8,  0 jun  2 09:37 /dev/sda
+brw-rw---- 1 root disk 8,  1 jun  2 09:37 /dev/sda1
+brw-rw---- 1 root disk 8,  2 jun  2 09:37 /dev/sda2
+brw-rw---- 1 root disk 8,  5 jun  2 09:37 /dev/sda5
+brw-rw---- 1 root disk 8, 16 jun  2 09:49 /dev/sdb
+brw-rw---- 1 root disk 8, 17 jun  2 09:49 /dev/sdb1
+brw-rw---- 1 root disk 8, 18 jun  2 09:49 /dev/sdb2
+brw-rw---- 1 root disk 8, 32 jun  2 09:37 /dev/sdc
+root@alumno-VirtualBox:/home/alumno/Escritorio# fdisk /dev /sdc
+
+Usage:
+ fdisk [options] <disk>      change partition table
+ fdisk [options] -l [<disk>] list partition table(s)
+
+Display or manipulate a disk partition table.
+
+Opciones:
+ -b, --sector-size <size>      physical and logical sector size
+ -B, --protect-boot            don't erase bootbits when creating a new label
+ -c, --compatibility[=<mode>]  mode is 'dos' or 'nondos' (default)
+ -L, --color[=<when>]          colorize output (auto, always or never)
+                                 colors are enabled by default
+ -l, --list                    display partitions end exit
+ -o, --output <list>           output columns
+ -t, --type <type>             recognize specified partition table type only
+ -u, --units[=<unit>]          display units: 'cylinders' or 'sectors' (default)
+ -s, --getsz                   display device size in 512-byte sectors [DEPRECATED]
+     --bytes                   print SIZE in bytes rather than in human readable format
+ -w, --wipe <mode>             wipe signatures (auto, always or never)
+
+ -C, --cylinders <number>      specify the number of cylinders
+ -H, --heads <number>          specify the number of heads
+ -S, --sectors <number>        specify the number of sectors per track
+
+ -h, --help     display this help and exit
+ -V, --version  output version information and exit
+
+Available columns (for -o):
+ gpt: Device Start End Sectors Size Type Type-UUID Attrs Name UUID
+ dos: Device Start End Sectors Cylinders Size Type Id Attrs Boot End-C/H/S
+      Start-C/H/S
+ bsd: Slice Start End Sectors Cylinders Size Type Bsize Cpg Fsize
+ sgi: Device Start End Sectors Cylinders Size Type Id Attrs
+ sun: Device Start End Sectors Cylinders Size Type Id Flags
+
+For more details see fdisk(8).
+root@alumno-VirtualBox:/home/alumno/Escritorio# 
+root@alumno-VirtualBox:/home/alumno/Escritorio# fdisk -l
+Disk /dev/sda: 8 GiB, 8589934592 bytes, 16777216 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0x17201772
+
+Disposit.  Inicio    Start    Final Sectores  Size Id Tipo
+/dev/sda1  *          2048 15728639 15726592  7,5G 83 Linux
+/dev/sda2         15730686 16775167  1044482  510M  5 Extendida
+/dev/sda5         15730688 16775167  1044480  510M 82 Linux swap / Solaris
+
+
+Disk /dev/sdb: 5 GiB, 5368709120 bytes, 10485760 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0xd427a686
+
+Disposit.  Inicio   Start    Final Sectores Size Id Tipo
+/dev/sdb1            2048  6293503  6291456   3G 83 Linux
+/dev/sdb2         6293504 10485759  4192256   2G 83 Linux
+
+
+Disk /dev/sdc: 5 GiB, 5368709120 bytes, 10485760 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+root@alumno-VirtualBox:/home/alumno/Escritorio# fdisk /dev/sdc
+
+Welcome to fdisk (util-linux 2.28.2).
+Changes will remain in memory only, until you decide to write them.
+Be careful before using the write command.
+
+El dispositivo no contiene una tabla de particiones reconocible.
+Created a new DOS disklabel with disk identifier 0xfe96a5d8.
+
+Orden (m para obtener ayuda): n
+Partition type
+   p   primary (0 primary, 0 extended, 4 free)
+   e   extended (container for logical partitions)
+Select (default p): p
+Número de partición (1-4, default 1): 
+First sector (2048-10485759, default 2048): 
+Last sector, +sectors or +size{K,M,G,T,P} (2048-10485759, default 10485759): +4G
+
+Created a new partition 1 of type 'Linux' and of size 4 GiB.
+
+Orden (m para obtener ayuda): n
+Partition type
+   p   primary (1 primary, 0 extended, 3 free)
+   e   extended (container for logical partitions)
+Select (default p): 
+
+Using default response p.
+Número de partición (2-4, default 2): 
+First sector (8390656-10485759, default 8390656): 
+Last sector, +sectors or +size{K,M,G,T,P} (8390656-10485759, default 10485759): 
+
+Created a new partition 2 of type 'Linux' and of size 1023 MiB.
+
+Orden (m para obtener ayuda): w
+The partition table has been altered.
+Calling ioctl() to re-read partition table.
+Syncing disks.
+
+root@alumno-VirtualBox:/home/alumno/Escritorio# ls -l/dev/sdc*
+ls: opción incorrecta -- «/»
+Pruebe 'ls --help' para más información.
+root@alumno-VirtualBox:/home/alumno/Escritorio# fdisk /dev/sdc/t
+
+Welcome to fdisk (util-linux 2.28.2).
+Changes will remain in memory only, until you decide to write them.
+Be careful before using the write command.
+
+fdisk: no se puede abrir /dev/sdc/t: No es un directorio
+root@alumno-VirtualBox:/home/alumno/Escritorio# fdisk /dev/sdc/
+
+Welcome to fdisk (util-linux 2.28.2).
+Changes will remain in memory only, until you decide to write them.
+Be careful before using the write command.
+
+fdisk: no se puede abrir /dev/sdc/: No es un directorio
+root@alumno-VirtualBox:/home/alumno/Escritorio# t
+t: no se encontró la orden
+root@alumno-VirtualBox:/home/alumno/Escritorio# fdisk /dev/sdc/
+
+Welcome to fdisk (util-linux 2.28.2).
+Changes will remain in memory only, until you decide to write them.
+Be careful before using the write command.
+
+fdisk: no se puede abrir /dev/sdc/: No es un directorio
+root@alumno-VirtualBox:/home/alumno/Escritorio# fdisk /dev/sdc
+
+Welcome to fdisk (util-linux 2.28.2).
+Changes will remain in memory only, until you decide to write them.
+Be careful before using the write command.
+
+
+Orden (m para obtener ayuda): t
+Número de partición (1,2, default 2): 1
+Partition type (type L to list all types): L
+
+ 0  Vacía           24  DOS de NEC      81  Minix / Linux a bf  Solaris        
+ 1  FAT12           27  WinRE NTFS ocul 82  Linux swap / So c1  DRDOS/sec (FAT-
+ 2  XENIX root      39  Plan 9          83  Linux           c4  DRDOS/sec (FAT-
+ 3  XENIX usr       3c  PartitionMagic  84  OS/2 hidden or  c6  DRDOS/sec (FAT-
+ 4  FAT16 <32M      40  Venix 80286     85  Linux extendida c7  Syrinx         
+ 5  Extendida       41  PPC PReP Boot   86  Conjunto de vol da  Datos sin SF   
+ 6  FAT16           42  SFS             87  Conjunto de vol db  CP/M / CTOS / .
+ 7  HPFS/NTFS/exFAT 4d  QNX4.x          88  Linux plaintext de  Utilidad Dell  
+ 8  AIX             4e  QNX4.x segunda  8e  Linux LVM       df  BootIt         
+ 9  AIX arrancable  4f  QNX4.x tercera  93  Amoeba          e1  DOS access     
+ a  Gestor de arran 50  OnTrack DM      94  Amoeba BBT      e3  DOS R/O        
+ b  W95 FAT32       51  OnTrack DM6 Aux 9f  BSD/OS          e4  SpeedStor      
+ c  W95 FAT32 (LBA) 52  CP/M            a0  Hibernación de  ea  Rufus alignment
+ e  W95 FAT16 (LBA) 53  OnTrack DM6 Aux a5  FreeBSD         eb  BeOS fs        
+ f  W95 Ext'd (LBA) 54  OnTrackDM6      a6  OpenBSD         ee  GPT            
+10  OPUS            55  EZ-Drive        a7  NeXTSTEP        ef  EFI (FAT-12/16/
+11  FAT12 oculta    56  Golden Bow      a8  UFS de Darwin   f0  inicio Linux/PA
+12  Compaq diagnost 5c  Priam Edisk     a9  NetBSD          f1  SpeedStor      
+14  FAT16 oculta <3 61  SpeedStor       ab  arranque de Dar f4  SpeedStor      
+16  FAT16 oculta    63  GNU HURD o SysV af  HFS / HFS+      f2  DOS secondary  
+17  HPFS/NTFS ocult 64  Novell Netware  b7  BSDI fs         fb  VMFS de VMware 
+18  SmartSleep de A 65  Novell Netware  b8  BSDI swap       fc  VMKCORE de VMwa
+1b  FAT32 de W95 oc 70  DiskSecure Mult bb  Boot Wizard hid fd  Linux raid auto
+1c  FAT32 de W95 (L 75  PC/IX           bc  Acronis FAT32 L fe  LANstep        
+1e  FAT16 de W95 (L 80  Minix antiguo   be  arranque de Sol ff  BBT            
+Partition type (type L to list all types): 8e
+
+Changed type of partition 'Linux' to 'Linux LVM'.
+
+Orden (m para obtener ayuda): 8e
+8: unknown command
+
+Orden (m para obtener ayuda): w
+
+The partition table has been altered.
+Calling ioctl() to re-read partition table.
+Syncing disks.
+
+root@alumno-VirtualBox:/home/alumno/Escritorio# pvs
+root@alumno-VirtualBox:/home/alumno/Escritorio# pv s
+El programa «pv» no está instalado. Puede instalarlo escribiendo:
+apt install pv
+root@alumno-VirtualBox:/home/alumno/Escritorio# pv create
+El programa «pv» no está instalado. Puede instalarlo escribiendo:
+apt install pv
+root@alumno-VirtualBox:/home/alumno/Escritorio# pvcreate
+  Please enter a physical volume path.
+root@alumno-VirtualBox:/home/alumno/Escritorio# pvcreate /dev/sdb1
+  Physical volume "/dev/sdb1" successfully created.
+root@alumno-VirtualBox:/home/alumno/Escritorio# pvs
+  PV         VG Fmt  Attr PSize PFree
+  /dev/sdb1     lvm2 ---  3,00g 3,00g
+root@alumno-VirtualBox:/home/alumno/Escritorio# pvcreate /dev/sdb2
+  Physical volume "/dev/sdb2" successfully created.
+root@alumno-VirtualBox:/home/alumno/Escritorio# pvcreate /dev/sdc1
+  Physical volume "/dev/sdc1" successfully created.
+root@alumno-VirtualBox:/home/alumno/Escritorio# pvcreate /dev/sdc2
+  Physical volume "/dev/sdc2" successfully created.
+root@alumno-VirtualBox:/home/alumno/Escritorio# pvs
+  PV         VG Fmt  Attr PSize    PFree   
+  /dev/sdb1     lvm2 ---     3,00g    3,00g
+  /dev/sdb2     lvm2 ---     2,00g    2,00g
+  /dev/sdc1     lvm2 ---     4,00g    4,00g
+  /dev/sdc2     lvm2 ---  1023,00m 1023,00m
+root@alumno-VirtualBox:/home/alumno/Escritorio# pvscan
+  PV /dev/sdc2                      lvm2 [1023,00 MiB]
+  PV /dev/sdb2                      lvm2 [2,00 GiB]
+  PV /dev/sdc1                      lvm2 [4,00 GiB]
+  PV /dev/sdb1                      lvm2 [3,00 GiB]
+  Total: 4 [10,00 GiB] / in use: 0 [0   ] / in no VG: 4 [10,00 GiB]
+root@alumno-VirtualBox:/home/alumno/Escritorio# pvdisplay
+  "/dev/sdc2" is a new physical volume of "1023,00 MiB"
+  --- NEW Physical volume ---
+  PV Name               /dev/sdc2
+  VG Name               
+  PV Size               1023,00 MiB
+  Allocatable           NO
+  PE Size               0   
+  Total PE              0
+  Free PE               0
+  Allocated PE          0
+  PV UUID               mGoTNm-LOUv-DgPO-XXWk-CaI8-fCSZ-dSlRCA
+   
+  "/dev/sdb2" is a new physical volume of "2,00 GiB"
+  --- NEW Physical volume ---
+  PV Name               /dev/sdb2
+  VG Name               
+  PV Size               2,00 GiB
+  Allocatable           NO
+  PE Size               0   
+  Total PE              0
+  Free PE               0
+  Allocated PE          0
+  PV UUID               r0Wv6H-SVwy-M22Z-sv3b-Aaj6-8kUl-WQ8Wv2
+   
+  "/dev/sdc1" is a new physical volume of "4,00 GiB"
+  --- NEW Physical volume ---
+  PV Name               /dev/sdc1
+  VG Name               
+  PV Size               4,00 GiB
+  Allocatable           NO
+  PE Size               0   
+  Total PE              0
+  Free PE               0
+  Allocated PE          0
+  PV UUID               i1Ny1G-srfz-N3XL-2mGl-y59C-b12Y-AIK04s
+   
+  "/dev/sdb1" is a new physical volume of "3,00 GiB"
+  --- NEW Physical volume ---
+  PV Name               /dev/sdb1
+  VG Name               
+  PV Size               3,00 GiB
+  Allocatable           NO
+  PE Size               0   
+  Total PE              0
+  Free PE               0
+  Allocated PE          0
+  PV UUID               Z860Vi-Q33L-XXpo-hc9N-HZvg-rLPf-6n088e
+   
+root@alumno-VirtualBox:/home/alumno/Escritorio# vgs
+root@alumno-VirtualBox:/home/alumno/Escritorio# vgcreate
+  Please provide volume group name and physical volumes
+  Run `vgcreate --help' for more information.
+root@alumno-VirtualBox:/home/alumno/Escritorio# vgcreate vguno /dev/sdb1
+  Volume group "vguno" successfully created
+root@alumno-VirtualBox:/home/alumno/Escritorio# vgs
+  VG    #PV #LV #SN Attr   VSize VFree
+  vguno   1   0   0 wz--n- 3,00g 3,00g
+root@alumno-VirtualBox:/home/alumno/Escritorio# vgcreate vgdos /dev/sdb2
+  Volume group "vgdos" successfully created
+root@alumno-VirtualBox:/home/alumno/Escritorio# vgcreate vgtres /dev/sdc1
+  Volume group "vgtres" successfully created
+root@alumno-VirtualBox:/home/alumno/Escritorio# vgs
+  VG     #PV #LV #SN Attr   VSize VFree
+  vgdos    1   0   0 wz--n- 2,00g 2,00g
+  vgtres   1   0   0 wz--n- 4,00g 4,00g
+  vguno    1   0   0 wz--n- 3,00g 3,00g
+root@alumno-VirtualBox:/home/alumno/Escritorio# fdisk -l /dev/sd*
+Disk /dev/sda: 8 GiB, 8589934592 bytes, 16777216 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0x17201772
+
+Disposit.  Inicio    Start    Final Sectores  Size Id Tipo
+/dev/sda1  *          2048 15728639 15726592  7,5G 83 Linux
+/dev/sda2         15730686 16775167  1044482  510M  5 Extendida
+/dev/sda5         15730688 16775167  1044480  510M 82 Linux swap / Solaris
+
+
+Disk /dev/sda1: 7,5 GiB, 8052015104 bytes, 15726592 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/sda2: 1 KiB, 1024 bytes, 2 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0x64777373
+
+Disposit.   Inicio Start   Final Sectores  Size Id Tipo
+/dev/sda2p1            2 1044481  1044480  510M 82 Linux swap / Solaris
+
+
+Disk /dev/sda5: 510 MiB, 534773760 bytes, 1044480 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/sdb: 5 GiB, 5368709120 bytes, 10485760 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0xd427a686
+
+Disposit.  Inicio   Start    Final Sectores Size Id Tipo
+/dev/sdb1            2048  6293503  6291456   3G 83 Linux
+/dev/sdb2         6293504 10485759  4192256   2G 83 Linux
+
+
+Disk /dev/sdb1: 3 GiB, 3221225472 bytes, 6291456 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/sdb2: 2 GiB, 2146435072 bytes, 4192256 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/sdc: 5 GiB, 5368709120 bytes, 10485760 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0xfe96a5d8
+
+Disposit.  Inicio   Start    Final Sectores  Size Id Tipo
+/dev/sdc1            2048  8390655  8388608    4G 8e Linux LVM
+/dev/sdc2         8390656 10485759  2095104 1023M 83 Linux
+
+
+Disk /dev/sdc1: 4 GiB, 4294967296 bytes, 8388608 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/sdc2: 1023 MiB, 1072693248 bytes, 2095104 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+root@alumno-VirtualBox:/home/alumno/Escritorio# fdisk /dev/sdb
+
+Welcome to fdisk (util-linux 2.28.2).
+Changes will remain in memory only, until you decide to write them.
+Be careful before using the write command.
+
+
+Orden (m para obtener ayuda): t
+Número de partición (1,2, default 2): 
+Partition type (type L to list all types): L
+
+ 0  Vacía           24  DOS de NEC      81  Minix / Linux a bf  Solaris        
+ 1  FAT12           27  WinRE NTFS ocul 82  Linux swap / So c1  DRDOS/sec (FAT-
+ 2  XENIX root      39  Plan 9          83  Linux           c4  DRDOS/sec (FAT-
+ 3  XENIX usr       3c  PartitionMagic  84  OS/2 hidden or  c6  DRDOS/sec (FAT-
+ 4  FAT16 <32M      40  Venix 80286     85  Linux extendida c7  Syrinx         
+ 5  Extendida       41  PPC PReP Boot   86  Conjunto de vol da  Datos sin SF   
+ 6  FAT16           42  SFS             87  Conjunto de vol db  CP/M / CTOS / .
+ 7  HPFS/NTFS/exFAT 4d  QNX4.x          88  Linux plaintext de  Utilidad Dell  
+ 8  AIX             4e  QNX4.x segunda  8e  Linux LVM       df  BootIt         
+ 9  AIX arrancable  4f  QNX4.x tercera  93  Amoeba          e1  DOS access     
+ a  Gestor de arran 50  OnTrack DM      94  Amoeba BBT      e3  DOS R/O        
+ b  W95 FAT32       51  OnTrack DM6 Aux 9f  BSD/OS          e4  SpeedStor      
+ c  W95 FAT32 (LBA) 52  CP/M            a0  Hibernación de  ea  Rufus alignment
+ e  W95 FAT16 (LBA) 53  OnTrack DM6 Aux a5  FreeBSD         eb  BeOS fs        
+ f  W95 Ext'd (LBA) 54  OnTrackDM6      a6  OpenBSD         ee  GPT            
+10  OPUS            55  EZ-Drive        a7  NeXTSTEP        ef  EFI (FAT-12/16/
+11  FAT12 oculta    56  Golden Bow      a8  UFS de Darwin   f0  inicio Linux/PA
+12  Compaq diagnost 5c  Priam Edisk     a9  NetBSD          f1  SpeedStor      
+14  FAT16 oculta <3 61  SpeedStor       ab  arranque de Dar f4  SpeedStor      
+16  FAT16 oculta    63  GNU HURD o SysV af  HFS / HFS+      f2  DOS secondary  
+17  HPFS/NTFS ocult 64  Novell Netware  b7  BSDI fs         fb  VMFS de VMware 
+18  SmartSleep de A 65  Novell Netware  b8  BSDI swap       fc  VMKCORE de VMwa
+1b  FAT32 de W95 oc 70  DiskSecure Mult bb  Boot Wizard hid fd  Linux raid auto
+1c  FAT32 de W95 (L 75  PC/IX           bc  Acronis FAT32 L fe  LANstep        
+1e  FAT16 de W95 (L 80  Minix antiguo   be  arranque de Sol ff  BBT            
+Partition type (type L to list all types): 8e
+
+Changed type of partition 'Linux' to 'Linux LVM'.
+
+Orden (m para obtener ayuda): w
+The partition table has been altered.
+Calling ioctl() to re-read partition table.
+Syncing disks.
+
+root@alumno-VirtualBox:/home/alumno/Escritorio# fdisk -l /dev/sd*
+Disk /dev/sda: 8 GiB, 8589934592 bytes, 16777216 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0x17201772
+
+Disposit.  Inicio    Start    Final Sectores  Size Id Tipo
+/dev/sda1  *          2048 15728639 15726592  7,5G 83 Linux
+/dev/sda2         15730686 16775167  1044482  510M  5 Extendida
+/dev/sda5         15730688 16775167  1044480  510M 82 Linux swap / Solaris
+
+
+Disk /dev/sda1: 7,5 GiB, 8052015104 bytes, 15726592 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/sda2: 1 KiB, 1024 bytes, 2 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0x64777373
+
+Disposit.   Inicio Start   Final Sectores  Size Id Tipo
+/dev/sda2p1            2 1044481  1044480  510M 82 Linux swap / Solaris
+
+
+Disk /dev/sda5: 510 MiB, 534773760 bytes, 1044480 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/sdb: 5 GiB, 5368709120 bytes, 10485760 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0xd427a686
+
+Disposit.  Inicio   Start    Final Sectores Size Id Tipo
+/dev/sdb1            2048  6293503  6291456   3G 83 Linux
+/dev/sdb2         6293504 10485759  4192256   2G 8e Linux LVM
+
+
+Disk /dev/sdb1: 3 GiB, 3221225472 bytes, 6291456 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/sdb2: 2 GiB, 2146435072 bytes, 4192256 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/sdc: 5 GiB, 5368709120 bytes, 10485760 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0xfe96a5d8
+
+Disposit.  Inicio   Start    Final Sectores  Size Id Tipo
+/dev/sdc1            2048  8390655  8388608    4G 8e Linux LVM
+/dev/sdc2         8390656 10485759  2095104 1023M 83 Linux
+
+
+Disk /dev/sdc1: 4 GiB, 4294967296 bytes, 8388608 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/sdc2: 1023 MiB, 1072693248 bytes, 2095104 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+root@alumno-VirtualBox:/home/alumno/Escritorio# fdisk /dev/sdc
+
+Welcome to fdisk (util-linux 2.28.2).
+Changes will remain in memory only, until you decide to write them.
+Be careful before using the write command.
+
+
+Orden (m para obtener ayuda): t
+Número de partición (1,2, default 2): 2
+Partition type (type L to list all types): L
+
+ 0  Vacía           24  DOS de NEC      81  Minix / Linux a bf  Solaris        
+ 1  FAT12           27  WinRE NTFS ocul 82  Linux swap / So c1  DRDOS/sec (FAT-
+ 2  XENIX root      39  Plan 9          83  Linux           c4  DRDOS/sec (FAT-
+ 3  XENIX usr       3c  PartitionMagic  84  OS/2 hidden or  c6  DRDOS/sec (FAT-
+ 4  FAT16 <32M      40  Venix 80286     85  Linux extendida c7  Syrinx         
+ 5  Extendida       41  PPC PReP Boot   86  Conjunto de vol da  Datos sin SF   
+ 6  FAT16           42  SFS             87  Conjunto de vol db  CP/M / CTOS / .
+ 7  HPFS/NTFS/exFAT 4d  QNX4.x          88  Linux plaintext de  Utilidad Dell  
+ 8  AIX             4e  QNX4.x segunda  8e  Linux LVM       df  BootIt         
+ 9  AIX arrancable  4f  QNX4.x tercera  93  Amoeba          e1  DOS access     
+ a  Gestor de arran 50  OnTrack DM      94  Amoeba BBT      e3  DOS R/O        
+ b  W95 FAT32       51  OnTrack DM6 Aux 9f  BSD/OS          e4  SpeedStor      
+ c  W95 FAT32 (LBA) 52  CP/M            a0  Hibernación de  ea  Rufus alignment
+ e  W95 FAT16 (LBA) 53  OnTrack DM6 Aux a5  FreeBSD         eb  BeOS fs        
+ f  W95 Ext'd (LBA) 54  OnTrackDM6      a6  OpenBSD         ee  GPT            
+10  OPUS            55  EZ-Drive        a7  NeXTSTEP        ef  EFI (FAT-12/16/
+11  FAT12 oculta    56  Golden Bow      a8  UFS de Darwin   f0  inicio Linux/PA
+12  Compaq diagnost 5c  Priam Edisk     a9  NetBSD          f1  SpeedStor      
+14  FAT16 oculta <3 61  SpeedStor       ab  arranque de Dar f4  SpeedStor      
+16  FAT16 oculta    63  GNU HURD o SysV af  HFS / HFS+      f2  DOS secondary  
+17  HPFS/NTFS ocult 64  Novell Netware  b7  BSDI fs         fb  VMFS de VMware 
+18  SmartSleep de A 65  Novell Netware  b8  BSDI swap       fc  VMKCORE de VMwa
+1b  FAT32 de W95 oc 70  DiskSecure Mult bb  Boot Wizard hid fd  Linux raid auto
+1c  FAT32 de W95 (L 75  PC/IX           bc  Acronis FAT32 L fe  LANstep        
+1e  FAT16 de W95 (L 80  Minix antiguo   be  arranque de Sol ff  BBT            
+Partition type (type L to list all types): 8e
+
+Changed type of partition 'Linux' to 'Linux LVM'.
+
+Orden (m para obtener ayuda): w
+The partition table has been altered.
+Calling ioctl() to re-read partition table.
+Syncing disks.
+
+root@alumno-VirtualBox:/home/alumno/Escritorio# fdisk -l /dev/sd*
+Disk /dev/sda: 8 GiB, 8589934592 bytes, 16777216 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0x17201772
+
+Disposit.  Inicio    Start    Final Sectores  Size Id Tipo
+/dev/sda1  *          2048 15728639 15726592  7,5G 83 Linux
+/dev/sda2         15730686 16775167  1044482  510M  5 Extendida
+/dev/sda5         15730688 16775167  1044480  510M 82 Linux swap / Solaris
+
+
+Disk /dev/sda1: 7,5 GiB, 8052015104 bytes, 15726592 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/sda2: 1 KiB, 1024 bytes, 2 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0x64777373
+
+Disposit.   Inicio Start   Final Sectores  Size Id Tipo
+/dev/sda2p1            2 1044481  1044480  510M 82 Linux swap / Solaris
+
+
+Disk /dev/sda5: 510 MiB, 534773760 bytes, 1044480 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/sdb: 5 GiB, 5368709120 bytes, 10485760 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0xd427a686
+
+Disposit.  Inicio   Start    Final Sectores Size Id Tipo
+/dev/sdb1            2048  6293503  6291456   3G 83 Linux
+/dev/sdb2         6293504 10485759  4192256   2G 8e Linux LVM
+
+
+Disk /dev/sdb1: 3 GiB, 3221225472 bytes, 6291456 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/sdb2: 2 GiB, 2146435072 bytes, 4192256 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/sdc: 5 GiB, 5368709120 bytes, 10485760 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0xfe96a5d8
+
+Disposit.  Inicio   Start    Final Sectores  Size Id Tipo
+/dev/sdc1            2048  8390655  8388608    4G 8e Linux LVM
+/dev/sdc2         8390656 10485759  2095104 1023M 8e Linux LVM
+
+
+Disk /dev/sdc1: 4 GiB, 4294967296 bytes, 8388608 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/sdc2: 1023 MiB, 1072693248 bytes, 2095104 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+root@alumno-VirtualBox:/home/alumno/Escritorio# fdisk /dev/sdb
+
+Welcome to fdisk (util-linux 2.28.2).
+Changes will remain in memory only, until you decide to write them.
+Be careful before using the write command.
+
+
+Orden (m para obtener ayuda): t
+Número de partición (1,2, default 2): 1
+Partition type (type L to list all types): L
+
+ 0  Vacía           24  DOS de NEC      81  Minix / Linux a bf  Solaris        
+ 1  FAT12           27  WinRE NTFS ocul 82  Linux swap / So c1  DRDOS/sec (FAT-
+ 2  XENIX root      39  Plan 9          83  Linux           c4  DRDOS/sec (FAT-
+ 3  XENIX usr       3c  PartitionMagic  84  OS/2 hidden or  c6  DRDOS/sec (FAT-
+ 4  FAT16 <32M      40  Venix 80286     85  Linux extendida c7  Syrinx         
+ 5  Extendida       41  PPC PReP Boot   86  Conjunto de vol da  Datos sin SF   
+ 6  FAT16           42  SFS             87  Conjunto de vol db  CP/M / CTOS / .
+ 7  HPFS/NTFS/exFAT 4d  QNX4.x          88  Linux plaintext de  Utilidad Dell  
+ 8  AIX             4e  QNX4.x segunda  8e  Linux LVM       df  BootIt         
+ 9  AIX arrancable  4f  QNX4.x tercera  93  Amoeba          e1  DOS access     
+ a  Gestor de arran 50  OnTrack DM      94  Amoeba BBT      e3  DOS R/O        
+ b  W95 FAT32       51  OnTrack DM6 Aux 9f  BSD/OS          e4  SpeedStor      
+ c  W95 FAT32 (LBA) 52  CP/M            a0  Hibernación de  ea  Rufus alignment
+ e  W95 FAT16 (LBA) 53  OnTrack DM6 Aux a5  FreeBSD         eb  BeOS fs        
+ f  W95 Ext'd (LBA) 54  OnTrackDM6      a6  OpenBSD         ee  GPT            
+10  OPUS            55  EZ-Drive        a7  NeXTSTEP        ef  EFI (FAT-12/16/
+11  FAT12 oculta    56  Golden Bow      a8  UFS de Darwin   f0  inicio Linux/PA
+12  Compaq diagnost 5c  Priam Edisk     a9  NetBSD          f1  SpeedStor      
+14  FAT16 oculta <3 61  SpeedStor       ab  arranque de Dar f4  SpeedStor      
+16  FAT16 oculta    63  GNU HURD o SysV af  HFS / HFS+      f2  DOS secondary  
+17  HPFS/NTFS ocult 64  Novell Netware  b7  BSDI fs         fb  VMFS de VMware 
+18  SmartSleep de A 65  Novell Netware  b8  BSDI swap       fc  VMKCORE de VMwa
+1b  FAT32 de W95 oc 70  DiskSecure Mult bb  Boot Wizard hid fd  Linux raid auto
+1c  FAT32 de W95 (L 75  PC/IX           bc  Acronis FAT32 L fe  LANstep        
+1e  FAT16 de W95 (L 80  Minix antiguo   be  arranque de Sol ff  BBT            
+Partition type (type L to list all types): 8e
+
+Changed type of partition 'Linux' to 'Linux LVM'.
+
+Orden (m para obtener ayuda): w
+The partition table has been altered.
+Calling ioctl() to re-read partition table.
+Syncing disks.
+
+root@alumno-VirtualBox:/home/alumno/Escritorio# fdisk -l /dev/sd*
+Disk /dev/sda: 8 GiB, 8589934592 bytes, 16777216 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0x17201772
+
+Disposit.  Inicio    Start    Final Sectores  Size Id Tipo
+/dev/sda1  *          2048 15728639 15726592  7,5G 83 Linux
+/dev/sda2         15730686 16775167  1044482  510M  5 Extendida
+/dev/sda5         15730688 16775167  1044480  510M 82 Linux swap / Solaris
+
+
+Disk /dev/sda1: 7,5 GiB, 8052015104 bytes, 15726592 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/sda2: 1 KiB, 1024 bytes, 2 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0x64777373
+
+Disposit.   Inicio Start   Final Sectores  Size Id Tipo
+/dev/sda2p1            2 1044481  1044480  510M 82 Linux swap / Solaris
+
+
+Disk /dev/sda5: 510 MiB, 534773760 bytes, 1044480 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/sdb: 5 GiB, 5368709120 bytes, 10485760 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0xd427a686
+
+Disposit.  Inicio   Start    Final Sectores Size Id Tipo
+/dev/sdb1            2048  6293503  6291456   3G 8e Linux LVM
+/dev/sdb2         6293504 10485759  4192256   2G 8e Linux LVM
+
+
+Disk /dev/sdb1: 3 GiB, 3221225472 bytes, 6291456 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/sdb2: 2 GiB, 2146435072 bytes, 4192256 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/sdc: 5 GiB, 5368709120 bytes, 10485760 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0xfe96a5d8
+
+Disposit.  Inicio   Start    Final Sectores  Size Id Tipo
+/dev/sdc1            2048  8390655  8388608    4G 8e Linux LVM
+/dev/sdc2         8390656 10485759  2095104 1023M 8e Linux LVM
+
+
+Disk /dev/sdc1: 4 GiB, 4294967296 bytes, 8388608 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/sdc2: 1023 MiB, 1072693248 bytes, 2095104 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
