@@ -1,0 +1,408 @@
+    1  apt-get update && apt-get upgrade
+    2  apt-cache search kernel-header
+    3  apt-cache search linux-headers
+    4  apt-get install linux-header
+    5  apt-get install linux-headers
+    6  apt-get install linux-headers-$(uname -r)
+    7  apt-cache search build
+    8  apt-cache search build | more
+    9  apt-get install build-essential
+   10  apt-get install lvm mdadm tree less git mc
+   11  apt-get install lvm2 mdadm tree less git mc
+   12  cd /media/alumno/VBOXADDITIONS_5.1.8_111374/
+   13  ls -l
+   14  ./VBoxLinuxAdditions.run 
+   15  apt-get clean
+   16  reboot
+   17  fdisk -l
+   18  fdisk /dev/sdb
+   19  fdisk -l
+   20  ls -l /dev/sd*
+   21  fdisk /dev /sdc
+   22  fdisk -l
+   23  fdisk /dev/sdc
+   24  ls -l/dev/sdc*
+   25  fdisk /dev/sdc/t
+   26  fdisk /dev/sdc/
+   27  t
+   28  fdisk /dev/sdc/
+   29  fdisk /dev/sdc
+   30  pvs
+   31  pv s
+   32  pv create
+   33  pvcreate
+   34  pvcreate /dev/sdb1
+   35  pvs
+   36  pvcreate /dev/sdb2
+   37  pvcreate /dev/sdc1
+   38  pvcreate /dev/sdc2
+   39  pvs
+   40  pvscan
+   41  pvdisplay
+   42  vgs
+   43  vgcreate
+   44  vgcreate vguno /dev/sdb1
+   45  vgs
+   46  vgcreate vgdos /dev/sdb2
+   47  vgcreate vgtres /dev/sdc1
+   48  vgs
+   49  fdisk -l /dev/sd*
+   50  fdisk /dev/sdb
+   51  fdisk -l /dev/sd*
+   52  fdisk /dev/sdc
+   53  fdisk -l /dev/sd*
+   54  fdisk /dev/sdb
+   55  fdisk -l /dev/sd*
+   56  history >> comandosdiscorigidoparte1
+root@alumno-VirtualBox:/home/alumno/Escritorio# history >> comandosdiscorigidoparte1
+root@alumno-VirtualBox:/home/alumno/Escritorio# vgs
+  VG     #PV #LV #SN Attr   VSize VFree
+  vgdos    1   0   0 wz--n- 2,00g 2,00g
+  vgtres   1   0   0 wz--n- 4,00g 4,00g
+  vguno    1   0   0 wz--n- 3,00g 3,00g
+root@alumno-VirtualBox:/home/alumno/Escritorio# lv
+El programa «lv» no está instalado. Puede instalarlo escribiendo:
+apt install lv
+root@alumno-VirtualBox:/home/alumno/Escritorio# lvs
+root@alumno-VirtualBox:/home/alumno/Escritorio# lvcreate
+  Please provide a volume group name
+  Run `lvcreate --help' for more information.
+root@alumno-VirtualBox:/home/alumno/Escritorio# -L
+-L: no se encontró la orden
+root@alumno-VirtualBox:/home/alumno/Escritorio# lvcreate --help
+  lvcreate: Create a logical volume
+
+lvcreate
+	[-A|--autobackup {y|n}]
+	[-a|--activate [a|e|l]{y|n}]
+	[--addtag Tag]
+	[--alloc AllocationPolicy]
+	[-H|--cache
+	  [--cachemode {writeback|writethrough}]
+	  [--cachepolicy policy]
+	  [--cachesettings key=value]
+	[--cachepool CachePoolLogicalVolume{Name|Path}]
+	[-c|--chunksize ChunkSize]
+	[-C|--contiguous {y|n}]
+	[--commandprofile ProfileName]
+	[-d|--debug]
+	[-h|-?|--help]
+	[--errorwhenfull {y|n}]
+	[--ignoremonitoring]
+	[--monitor {y|n}]
+	[-i|--stripes Stripes [-I|--stripesize StripeSize]]
+	[-k|--setactivationskip {y|n}]
+	[-K|--ignoreactivationskip]
+	{-l|--extents LogicalExtentsNumber[%{VG|PVS|FREE}] |
+	 -L|--size LogicalVolumeSize[bBsSkKmMgGtTpPeE]}
+	[-M|--persistent {y|n}] [-j|--major major] [--minor minor]
+	[--metadataprofile ProfileName]
+	[-m|--mirrors Mirrors [--nosync]
+	  [{--mirrorlog {disk|core|mirrored}|--corelog}]]
+	[-n|--name LogicalVolumeName]
+	[--noudevsync]
+	[-p|--permission {r|rw}]
+	[--poolmetadatasize MetadataSize[bBsSkKmMgG]]
+	[--poolmetadataspare {y|n}]]
+	[--[raid]minrecoveryrate Rate]
+	[--[raid]maxrecoveryrate Rate]
+	[-r|--readahead {ReadAheadSectors|auto|none}]
+	[--reportformat {basic|json}]
+	[-R|--regionsize MirrorLogRegionSize]
+	[-T|--thin
+	  [--discards {ignore|nopassdown|passdown}]
+	[--thinpool ThinPoolLogicalVolume{Name|Path}]
+	[-t|--test]
+	[--type VolumeType]
+	[-v|--verbose]
+	[-W|--wipesignatures {y|n}]
+	[-Z|--zero {y|n}]
+	[--version]
+	VolumeGroupName [PhysicalVolumePath...]
+
+lvcreate
+	{ {-s|--snapshot} OriginalLogicalVolume[Path] |
+	  [-s|--snapshot] VolumeGroupName[Path] -V|--virtualsize VirtualSize}
+	  {-H|--cache} VolumeGroupName[Path][/OriginalLogicalVolume]
+	  {-T|--thin} VolumeGroupName[Path][/PoolLogicalVolume]
+	              -V|--virtualsize VirtualSize}
+	[-A|--autobackup {y|n}]
+	[--addtag Tag]
+	[--alloc AllocationPolicy]
+	[--cachepolicy Policy] [--cachesettings Key=Value]
+	[-c|--chunksize]
+	[-C|--contiguous {y|n}]
+	[--commandprofile ProfileName]
+	[-d|--debug]
+	[--discards {ignore|nopassdown|passdown}]
+	[-h|-?|--help]
+	[--ignoremonitoring]
+	[--monitor {y|n}]
+	[-i|--stripes Stripes [-I|--stripesize StripeSize]]
+	[-k|--setactivationskip {y|n}]
+	[-K|--ignoreactivationskip]
+	{-l|--extents LogicalExtentsNumber[%{VG|FREE|ORIGIN}] |
+	 -L|--size LogicalVolumeSize[bBsSkKmMgGtTpPeE]}
+	[--poolmetadatasize MetadataVolumeSize[bBsSkKmMgG]]
+	[-M|--persistent {y|n}] [-j|--major major] [--minor minor]
+	[--metadataprofile ProfileName]
+	[-n|--name LogicalVolumeName]
+	[--noudevsync]
+	[-p|--permission {r|rw}]
+	[-r|--readahead ReadAheadSectors|auto|none]
+	[--reportformat {basic|json}]
+	[-t|--test]
+	[{--thinpool ThinPoolLogicalVolume[Path] |
+	  --cachepool CachePoolLogicalVolume[Path]}]
+	[-v|--verbose]
+	[--version]
+	[PhysicalVolumePath...]
+
+
+root@alumno-VirtualBox:/home/alumno/Escritorio# -L +3G
+-L: no se encontró la orden
+root@alumno-VirtualBox:/home/alumno/Escritorio# -L+3G
+-L+3G: no se encontró la orden
+root@alumno-VirtualBox:/home/alumno/Escritorio# lvcreate -L +3G -n lvuno
+  Please provide a volume group name
+  Run `lvcreate --help' for more information.
+root@alumno-VirtualBox:/home/alumno/Escritorio# lvcreate -L+3G -n lvuno
+  Please provide a volume group name
+  Run `lvcreate --help' for more information.
+root@alumno-VirtualBox:/home/alumno/Escritorio# lvcreate -L +3G -n lvuno vguno
+  Volume group "vguno" has insufficient free space (767 extents): 768 required.
+root@alumno-VirtualBox:/home/alumno/Escritorio# lvcreate -L +2G -n lvuno vguno
+  Logical volume "lvuno" created.
+root@alumno-VirtualBox:/home/alumno/Escritorio# lvs
+  LV    VG    Attr       LSize Pool Origin Data%  Meta%  Move Log Cpy%Sync Convert
+  lvuno vguno -wi-a----- 2,00g                                                    
+root@alumno-VirtualBox:/home/alumno/Escritorio# vgs
+  VG     #PV #LV #SN Attr   VSize VFree   
+  vgdos    1   0   0 wz--n- 2,00g    2,00g
+  vgtres   1   0   0 wz--n- 4,00g    4,00g
+  vguno    1   1   0 wz--n- 3,00g 1020,00m
+root@alumno-VirtualBox:/home/alumno/Escritorio# lvcreate -l +100%FREE -n lvunobis vguno
+  Logical volume "lvunobis" created.
+root@alumno-VirtualBox:/home/alumno/Escritorio# lvs
+  LV       VG    Attr       LSize    Pool Origin Data%  Meta%  Move Log Cpy%Sync Convert
+  lvuno    vguno -wi-a-----    2,00g                                                    
+  lvunobis vguno -wi-a----- 1020,00m                                                    
+root@alumno-VirtualBox:/home/alumno/Escritorio# vgs
+  VG     #PV #LV #SN Attr   VSize VFree
+  vgdos    1   0   0 wz--n- 2,00g 2,00g
+  vgtres   1   0   0 wz--n- 4,00g 4,00g
+  vguno    1   2   0 wz--n- 3,00g    0 
+root@alumno-VirtualBox:/home/alumno/Escritorio# mkfs.
+
+
+/***************
+/*****************/
+/*******************/
+root@alumno-VirtualBox:/home/alumno/Escritorio# history >> comandosdiscorigidoparte1
+root@alumno-VirtualBox:/home/alumno/Escritorio# vgs
+  VG     #PV #LV #SN Attr   VSize VFree
+  vgdos    1   0   0 wz--n- 2,00g 2,00g
+  vgtres   1   0   0 wz--n- 4,00g 4,00g
+  vguno    1   0   0 wz--n- 3,00g 3,00g
+root@alumno-VirtualBox:/home/alumno/Escritorio# lv
+El programa «lv» no está instalado. Puede instalarlo escribiendo:
+apt install lv
+root@alumno-VirtualBox:/home/alumno/Escritorio# lvs
+root@alumno-VirtualBox:/home/alumno/Escritorio# lvcreate
+  Please provide a volume group name
+  Run `lvcreate --help' for more information.
+root@alumno-VirtualBox:/home/alumno/Escritorio# -L
+-L: no se encontró la orden
+root@alumno-VirtualBox:/home/alumno/Escritorio# lvcreate --help
+  lvcreate: Create a logical volume
+
+lvcreate
+	[-A|--autobackup {y|n}]
+	[-a|--activate [a|e|l]{y|n}]
+	[--addtag Tag]
+	[--alloc AllocationPolicy]
+	[-H|--cache
+	  [--cachemode {writeback|writethrough}]
+	  [--cachepolicy policy]
+	  [--cachesettings key=value]
+	[--cachepool CachePoolLogicalVolume{Name|Path}]
+	[-c|--chunksize ChunkSize]
+	[-C|--contiguous {y|n}]
+	[--commandprofile ProfileName]
+	[-d|--debug]
+	[-h|-?|--help]
+	[--errorwhenfull {y|n}]
+	[--ignoremonitoring]
+	[--monitor {y|n}]
+	[-i|--stripes Stripes [-I|--stripesize StripeSize]]
+	[-k|--setactivationskip {y|n}]
+	[-K|--ignoreactivationskip]
+	{-l|--extents LogicalExtentsNumber[%{VG|PVS|FREE}] |
+	 -L|--size LogicalVolumeSize[bBsSkKmMgGtTpPeE]}
+	[-M|--persistent {y|n}] [-j|--major major] [--minor minor]
+	[--metadataprofile ProfileName]
+	[-m|--mirrors Mirrors [--nosync]
+	  [{--mirrorlog {disk|core|mirrored}|--corelog}]]
+	[-n|--name LogicalVolumeName]
+	[--noudevsync]
+	[-p|--permission {r|rw}]
+	[--poolmetadatasize MetadataSize[bBsSkKmMgG]]
+	[--poolmetadataspare {y|n}]]
+	[--[raid]minrecoveryrate Rate]
+	[--[raid]maxrecoveryrate Rate]
+	[-r|--readahead {ReadAheadSectors|auto|none}]
+	[--reportformat {basic|json}]
+	[-R|--regionsize MirrorLogRegionSize]
+	[-T|--thin
+	  [--discards {ignore|nopassdown|passdown}]
+	[--thinpool ThinPoolLogicalVolume{Name|Path}]
+	[-t|--test]
+	[--type VolumeType]
+	[-v|--verbose]
+	[-W|--wipesignatures {y|n}]
+	[-Z|--zero {y|n}]
+	[--version]
+	VolumeGroupName [PhysicalVolumePath...]
+
+lvcreate
+	{ {-s|--snapshot} OriginalLogicalVolume[Path] |
+	  [-s|--snapshot] VolumeGroupName[Path] -V|--virtualsize VirtualSize}
+	  {-H|--cache} VolumeGroupName[Path][/OriginalLogicalVolume]
+	  {-T|--thin} VolumeGroupName[Path][/PoolLogicalVolume]
+	              -V|--virtualsize VirtualSize}
+	[-A|--autobackup {y|n}]
+	[--addtag Tag]
+	[--alloc AllocationPolicy]
+	[--cachepolicy Policy] [--cachesettings Key=Value]
+	[-c|--chunksize]
+	[-C|--contiguous {y|n}]
+	[--commandprofile ProfileName]
+	[-d|--debug]
+	[--discards {ignore|nopassdown|passdown}]
+	[-h|-?|--help]
+	[--ignoremonitoring]
+	[--monitor {y|n}]
+	[-i|--stripes Stripes [-I|--stripesize StripeSize]]
+	[-k|--setactivationskip {y|n}]
+	[-K|--ignoreactivationskip]
+	{-l|--extents LogicalExtentsNumber[%{VG|FREE|ORIGIN}] |
+	 -L|--size LogicalVolumeSize[bBsSkKmMgGtTpPeE]}
+	[--poolmetadatasize MetadataVolumeSize[bBsSkKmMgG]]
+	[-M|--persistent {y|n}] [-j|--major major] [--minor minor]
+	[--metadataprofile ProfileName]
+	[-n|--name LogicalVolumeName]
+	[--noudevsync]
+	[-p|--permission {r|rw}]
+	[-r|--readahead ReadAheadSectors|auto|none]
+	[--reportformat {basic|json}]
+	[-t|--test]
+	[{--thinpool ThinPoolLogicalVolume[Path] |
+	  --cachepool CachePoolLogicalVolume[Path]}]
+	[-v|--verbose]
+	[--version]
+	[PhysicalVolumePath...]
+
+
+root@alumno-VirtualBox:/home/alumno/Escritorio# -L +3G
+-L: no se encontró la orden
+root@alumno-VirtualBox:/home/alumno/Escritorio# -L+3G
+-L+3G: no se encontró la orden
+root@alumno-VirtualBox:/home/alumno/Escritorio# lvcreate -L +3G -n lvuno
+  Please provide a volume group name
+  Run `lvcreate --help' for more information.
+root@alumno-VirtualBox:/home/alumno/Escritorio# lvcreate -L+3G -n lvuno
+  Please provide a volume group name
+  Run `lvcreate --help' for more information.
+root@alumno-VirtualBox:/home/alumno/Escritorio# lvcreate -L +3G -n lvuno vguno
+  Volume group "vguno" has insufficient free space (767 extents): 768 required.
+root@alumno-VirtualBox:/home/alumno/Escritorio# lvcreate -L +2G -n lvuno vguno
+  Logical volume "lvuno" created.
+root@alumno-VirtualBox:/home/alumno/Escritorio# lvs
+  LV    VG    Attr       LSize Pool Origin Data%  Meta%  Move Log Cpy%Sync Convert
+  lvuno vguno -wi-a----- 2,00g                                                    
+root@alumno-VirtualBox:/home/alumno/Escritorio# vgs
+  VG     #PV #LV #SN Attr   VSize VFree   
+  vgdos    1   0   0 wz--n- 2,00g    2,00g
+  vgtres   1   0   0 wz--n- 4,00g    4,00g
+  vguno    1   1   0 wz--n- 3,00g 1020,00m
+root@alumno-VirtualBox:/home/alumno/Escritorio# lvcreate -l +100%FREE -n lvunobis vguno
+  Logical volume "lvunobis" created.
+root@alumno-VirtualBox:/home/alumno/Escritorio# lvs
+  LV       VG    Attr       LSize    Pool Origin Data%  Meta%  Move Log Cpy%Sync Convert
+  lvuno    vguno -wi-a-----    2,00g                                                    
+  lvunobis vguno -wi-a----- 1020,00m                                                    
+root@alumno-VirtualBox:/home/alumno/Escritorio# vgs
+  VG     #PV #LV #SN Attr   VSize VFree
+  vgdos    1   0   0 wz--n- 2,00g 2,00g
+  vgtres   1   0   0 wz--n- 4,00g 4,00g
+  vguno    1   2   0 wz--n- 3,00g    0 
+root@alumno-VirtualBox:/home/alumno/Escritorio# ls -l /dev/mapper/
+total 0
+crw------- 1 root root 10, 236 jun  2 09:37 control
+lrwxrwxrwx 1 root root       7 jun  2 11:24 vguno-lvuno -> ../dm-0
+lrwxrwxrwx 1 root root       7 jun  2 11:30 vguno-lvunobis -> ../dm-1
+root@alumno-VirtualBox:/home/alumno/Escritorio# mkfs.ext4 /dev/mapper/vguno-lvuno
+mke2fs 1.43.3 (04-Sep-2016)
+Se está creando un sistema de ficheros con 524288 bloques de 4k y 131072 nodos-i
+UUID del sistema de ficheros: 076a29bc-2226-4ff2-89dd-ee6e7c3dc91d
+Respaldo del superbloque guardado en los bloques: 
+	32768, 98304, 163840, 229376, 294912
+
+Reservando las tablas de grupo: hecho                            
+Escribiendo las tablas de nodos-i: hecho                            
+Creando el fichero de transacciones (16384 bloques): hecho
+Escribiendo superbloques y la información contable del sistema de archivos: hecho
+
+root@alumno-VirtualBox:/home/alumno/Escritorio# mkdir -p ayala{loguno,logbis}
+root@alumno-VirtualBox:/home/alumno/Escritorio# ls
+ayalalogbis  ayalaloguno  comandosdiscorigidoparte1  comandosdiscorigidoparte1(clase2)  historycomandosdiscorigidoparte1(clase2)  KINGSTON
+root@alumno-VirtualBox:/home/alumno/Escritorio# mkdir -p /ayala/{loguno,logbis}
+root@alumno-VirtualBox:/home/alumno/Escritorio# ls
+ayalalogbis  ayalaloguno  comandosdiscorigidoparte1  comandosdiscorigidoparte1(clase2)  historycomandosdiscorigidoparte1(clase2)  KINGSTON
+root@alumno-VirtualBox:/home/alumno/Escritorio# ls
+ayalalogbis  ayalaloguno  comandosdiscorigidoparte1  comandosdiscorigidoparte1(clase2)  historycomandosdiscorigidoparte1(clase2)  KINGSTON
+root@alumno-VirtualBox:/home/alumno/Escritorio# mkdir -p /ayala/{/loguno,/logbis}
+root@alumno-VirtualBox:/home/alumno/Escritorio# ls
+ayalalogbis  ayalaloguno  comandosdiscorigidoparte1  comandosdiscorigidoparte1(clase2)  historycomandosdiscorigidoparte1(clase2)  KINGSTON
+root@alumno-VirtualBox:/home/alumno/Escritorio# mkdir -p ayala/{/loguno,/logbis}
+root@alumno-VirtualBox:/home/alumno/Escritorio# ls
+ayala  ayalalogbis  ayalaloguno  comandosdiscorigidoparte1  comandosdiscorigidoparte1(clase2)  historycomandosdiscorigidoparte1(clase2)  KINGSTON
+root@alumno-VirtualBox:/home/alumno/Escritorio# cd ayala
+root@alumno-VirtualBox:/home/alumno/Escritorio/ayala# ls
+logbis  loguno
+root@alumno-VirtualBox:/home/alumno/Escritorio/ayala# cd ..
+root@alumno-VirtualBox:/home/alumno/Escritorio# mount /dev/mapper/vguno-lvuno ayala/loguno
+root@alumno-VirtualBox:/home/alumno/Escritorio# ls
+ayala  ayalalogbis  ayalaloguno  comandosdiscorigidoparte1  comandosdiscorigidoparte1(clase2)  historycomandosdiscorigidoparte1(clase2)  KINGSTON
+root@alumno-VirtualBox:/home/alumno/Escritorio# ls -l
+total 100
+drwxr-xr-x 4 root   root    4096 jun  2 11:47 ayala
+drwxr-xr-x 2 root   root    4096 jun  2 11:44 ayalalogbis
+drwxr-xr-x 2 root   root    4096 jun  2 11:44 ayalaloguno
+-rw-r--r-- 1 root   root    1408 jun  2 10:54 comandosdiscorigidoparte1
+-rw-rw-r-- 1 alumno alumno 37998 jun  2 11:02 comandosdiscorigidoparte1(clase2)
+-rw-rw-r-- 1 alumno alumno  1408 jun  2 11:02 historycomandosdiscorigidoparte1(clase2)
+-rw-rw-r-- 1 alumno alumno 37998 jun  2 10:50 KINGSTON
+root@alumno-VirtualBox:/home/alumno/Escritorio# df -h  /dev/mapper/vguno-lvuno ayala/loguno
+S.ficheros              Tamaño Usados  Disp Uso% Montado en
+/dev/mapper/vguno-lvuno   2,0G   6,0M  1,8G   1% /home/alumno/Escritorio/ayala/loguno
+/dev/mapper/vguno-lvuno   2,0G   6,0M  1,8G   1% /home/alumno/Escritorio/ayala/loguno
+root@alumno-VirtualBox:/home/alumno/Escritorio# dd if/dev/zero of=relleno.txt bs=1m count=600 
+dd: operando no reconocido «if/dev/zero»
+Pruebe 'dd --help' para más información.
+root@alumno-VirtualBox:/home/alumno/Escritorio# DD if/dev/zero of=relleno.txt bs=1M count=600 
+DD: no se encontró la orden
+root@alumno-VirtualBox:/home/alumno/Escritorio# dd if/dev/zero of=relleno.txt bs=1M count=600 
+dd: operando no reconocido «if/dev/zero»
+Pruebe 'dd --help' para más información.
+root@alumno-VirtualBox:/home/alumno/Escritorio# dd if=/dev/zero of=relleno.txt bs=1M count=600 
+600+0 registros leídos
+600+0 registros escritos
+629145600 bytes (629 MB, 600 MiB) copied, 8,71226 s, 72,2 MB/s
+root@alumno-VirtualBox:/home/alumno/Escritorio# vgs
+  VG     #PV #LV #SN Attr   VSize VFree
+  vgdos    1   0   0 wz--n- 2,00g 2,00g
+  vgtres   1   0   0 wz--n- 4,00g 4,00g
+  vguno    1   2   0 wz--n- 3,00g    0 
+root@alumno-VirtualBox:/home/alumno/Escritorio# 
+
